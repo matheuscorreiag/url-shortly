@@ -1,5 +1,4 @@
 "use client";
-
 import HeroInputButton from "../molecules/HeroInputButton";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
@@ -8,9 +7,7 @@ import toast from "react-hot-toast";
 import Title from "../atoms/Title";
 import colors from "tailwindcss/colors";
 import Result from "../molecules/Result";
-import Spinner from "../atoms/Spinner";
 import { shortUrlSchema } from "../../../utils/shortUrlSchema";
-import { ZodError, ZodErrorMap } from "zod";
 
 async function createShorterUrl(full_url: string) {
   const payload = {
