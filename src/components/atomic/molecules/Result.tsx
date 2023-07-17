@@ -15,7 +15,7 @@ export default function Result({ onClick, short_url }: ResultProps) {
           {url}/{short_url}
         </a>
 
-        <CopyButton onClick={() => onClick(url + short_url)} />
+        <CopyButton onClick={() => onClick(`${url}/${short_url}`)} />
       </div>
     </div>
   );
