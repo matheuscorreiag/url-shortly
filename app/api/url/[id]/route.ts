@@ -17,6 +17,15 @@ export async function GET(req: Request, { params }: { params: IParams }) {
     throw new Error("Invalid url");
   }
 
+  await prismaClient.url.update({
+    where: {
+      id: existUrl.id,
+    },
+    data: {
+      clicks: existUrl.clicks + 1,
+    },
+  });
+
   return NextResponse.json({
     full_url: existUrl.full_url,
   });
