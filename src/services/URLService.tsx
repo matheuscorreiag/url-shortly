@@ -22,3 +22,15 @@ export async function createShorterUrl(full_url: string) {
 
   return await axios.post(`${url}/api/url`, validatedPayload.data);
 }
+
+export async function redirectToFullUrl(short_url: string) {
+  const response = await axios.get(`${url}/api/url/${short_url}`);
+  const full_url: string = response.data.full_url;
+
+  console.log("full_url: ", full_url);
+  if (full_url.startsWith("www.")) {
+    window.location.href = "https://" + full_url;
+  } else {
+    window.location.href = full_url;
+  }
+}
