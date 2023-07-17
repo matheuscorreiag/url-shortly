@@ -2,9 +2,9 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { usePathname } from "next/navigation";
-import Spinner from "../../src/components/atomic/atoms/Spinner";
+import Spinner from "@/atomic/atoms/Spinner";
 import axios from "axios";
-import { url } from "../../config/url";
+import { url } from "@/src/config/url";
 
 async function redirectToFullUrl(short_url: string) {
   const response = await axios.get(`${url}/api/url/${short_url}`);

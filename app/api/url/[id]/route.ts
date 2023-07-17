@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { prismaClient } from "../../../../src/lib/prisma";
+import { prismaClient } from "@/src/lib/prisma";
 
 interface IParams {
   id?: string;

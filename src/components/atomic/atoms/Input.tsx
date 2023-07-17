@@ -5,7 +5,7 @@ import { twMerge } from "tailwind-merge";
 interface InputProps extends React.HTMLProps<HTMLInputElement> {
   isError: boolean;
 }
-export const Input = ({ isError, ...rest }: InputProps) => {
+export default function Input({ isError, ...rest }: InputProps) {
   return (
     <input
       className={twMerge(
@@ -16,4 +16,4 @@ export const Input = ({ isError, ...rest }: InputProps) => {
       {...rest}
     />
   );
-};
+}

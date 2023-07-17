@@ -1,5 +1,5 @@
-import { url } from "../../../../config/url";
-import CopyButton from "../atoms/CopyButton";
+import { url } from "@/src/config/url";
+import CopyButton from "@/atomic/atoms/CopyButton";
 
 interface ResultProps {
   onClick: (short_url: string) => void;
@@ -8,13 +8,11 @@ interface ResultProps {
 
 export default function Result({ onClick, short_url }: ResultProps) {
   return (
-    <div className="flex-1 flex flex-col items-center">
-      <label className="text-2xl">This is your short.ly URL:</label>
+    <div className="flex-1 flex flex-col items-center space-y-4">
+      <label className="text-2xl text-center line-clamp-1">
+        Click here to copy again!
+      </label>
       <div className="flex space-x-4">
-        <a href={short_url} className="text-2xl font-bold">
-          {url}/{short_url}
-        </a>
-
         <CopyButton onClick={() => onClick(`${url}/${short_url}`)} />
       </div>
     </div>

@@ -1,8 +1,8 @@
-import { Ref, useState } from "react";
-import Button from "../atoms/Button";
-import HeroImage from "../atoms/HeroImage";
-import { forwardRef } from "react";
-import { Input } from "../atoms/Input";
+import Button from "@/atomic/atoms/Button";
+import Input from "@/atomic/atoms/Input";
+import HeroImage from "@/atomic/atoms/HeroImage";
+
+import { useState } from "react";
 
 interface HeroInputButtonProps {
   onClick: (inputValue: string) => void;

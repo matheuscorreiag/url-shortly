@@ -1,4 +1,4 @@
-import HeroResult from "../src/components/atomic/organisms/HeroResult";
+import HeroResult from "@/atomic/organisms/HeroResult";
 
 export default function Home() {
   return (
