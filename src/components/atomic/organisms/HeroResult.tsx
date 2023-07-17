@@ -8,6 +8,7 @@ import Title from "../atoms/Title";
 import colors from "tailwindcss/colors";
 import Result from "../molecules/Result";
 import { shortUrlSchema } from "../../../utils/shortUrlSchema";
+import { url } from "../../../../config/url";
 
 async function createShorterUrl(full_url: string) {
   const payload = {
@@ -23,10 +24,7 @@ async function createShorterUrl(full_url: string) {
     throw new Error(validatedPayload.error.issues[0].message);
   }
 
-  return await axios.post(
-    "http://localhost:3000/api/url",
-    validatedPayload.data
-  );
+  return await axios.post(`${url}/api/url`, validatedPayload.data);
 }
 export default function HeroResult() {
   const { mutate, data, isLoading, isSuccess, isError } = useMutation({
@@ -46,7 +44,10 @@ export default function HeroResult() {
   return (
     <div className="w-full h-full flex flex-col md:flex-row items-center justify-around space-y-16 md:space-x-16">
       {isSuccess && (
-        <Result url={data.data.short_url} onClick={(url) => handleCopy(url)} />
+        <Result
+          short_url={data.data.short_url}
+          onClick={(url) => handleCopy(url)}
+        />
       )}
       {!isSuccess && <Title />}
 
