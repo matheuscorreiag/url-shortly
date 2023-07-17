@@ -8,13 +8,11 @@ interface ResultProps {
 
 export default function Result({ onClick, short_url }: ResultProps) {
   return (
-    <div className="flex-1 flex flex-col items-center space-y-4">
+    <div className="flex-1 flex flex-row items-center space-x-4">
       <label className="text-2xl text-center line-clamp-1">
         Click here to copy again!
       </label>
-      <div className="flex space-x-4">
-        <CopyButton onClick={() => onClick(`${url}/${short_url}`)} />
-      </div>
+      <CopyButton onClick={() => onClick(`${url}/${short_url}`)} />
     </div>
   );
 }
